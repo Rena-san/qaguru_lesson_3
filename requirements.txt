@@ -5,3 +5,5 @@ allure-pytest==2.15.0
 fastapi==0.116.1
 fastapi-pagination==0.13.3
 python-dotenv==1.1.1
+pydantic[email]
+uvicorn[standard]

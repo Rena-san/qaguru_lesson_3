@@ -49,5 +49,20 @@ poetry shell
    allure serve
    ```
   
+Установка зависимостей через pip
+
+2.Создайте виртуальное окружение в директории проекта:
+```bash
+python -m venv venv
+```
+3. Активируйте виртуальное окружение:
+```bash
+ . venv/bin/activate
+```
+4. Установите зависимости:
+```bash
+pip install -r requirements.txt
+```
+
 ## Документация 
 - https://reqres.in/api-docs/
