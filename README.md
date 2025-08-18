@@ -37,7 +37,7 @@ pip install 'pydantic[email]'
 
    5.1. Запустить микросервис:
    ```bash
-   uvicorn custom_api.main:app --reload
+   uvicorn app.main:app --reload
    ```
 
    5.2. Запустить тесты :

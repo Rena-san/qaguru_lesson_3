@@ -38,3 +38,19 @@ def check_status():
     logging.info(f"RESPONSE::{response.json()}")
 
     return response
+
+def create_user(user):
+    url = f"{Api.LOCAL_HOST}/api/users/"
+    logging.info(f"POST->URL::{url}")
+
+    body = {
+        "email": user.email,
+        "first_name": user.first_name,
+        "last_name": user.last_name,
+        "avatar": user.avatar,
+    }
+
+    logging.info(f"POST->DATA::{user.model_dump_json()}")
+    response = requests.post(url, json=body)
+    logging.info(f"RESPONSE::{response.json()}")
+    return response

@@ -1,7 +1,7 @@
 import math
 import allure
 
-from custom_api.api import get_users
+from app.api import get_users
 from http import HTTPStatus
 import pytest
 
