@@ -62,10 +62,15 @@ docker compose up -d
    ```bash
    uvicorn app.main:app --reload
    ```
-6. Запустите автотесты
+6. Запуск автотестов если зависимости установлены через pip
 
    ```bash
    pytest 
+   ```
+6.1 Запуск автотестов если зависимости установлены через poetry
+
+ ```bash
+   poetry run pytest
    ```
 7. Просмотр allure отчета:
 
