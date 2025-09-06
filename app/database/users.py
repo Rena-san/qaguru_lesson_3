@@ -1,4 +1,4 @@
-from typing import Iterable, Type
+from typing import Iterable, Type, List
 
 from fastapi import HTTPException
 from sqlmodel import Session, select
@@ -11,10 +11,14 @@ def get_user(user_id: int) -> User | None:
         return session.get(User, user_id)
 
 
-def get_users() -> Iterable[User]:
-    with Session(engine) as session:
-        statement = select(User)
-        return session.exec(statement).all()
+# def get_users() -> Iterable[User]:
+#     with Session(engine) as session:
+#         statement = select(User)
+#         return session.exec(statement).all()
+
+def get_users(session: Session, skip: int, limit: int) -> List[User]:
+    stmt = select(User).offset(skip).limit(limit)
+    return session.exec(stmt).all()
 
 
 def create_user(user: User) -> User:

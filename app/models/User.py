@@ -1,3 +1,4 @@
+from typing import List
 
 from pydantic import BaseModel, EmailStr, HttpUrl
 from sqlmodel import Field, SQLModel
@@ -12,11 +13,10 @@ class User(SQLModel, table=True):
 
 
 class UserCreate(BaseModel):
-    email: EmailStr
-    first_name: str
-    last_name: str
-    avatar: HttpUrl
-
+    email: EmailStr | None = None
+    first_name: str | None = None
+    last_name: str | None = None
+    avatar: str | None = None
 
 
 class UserUpdate(BaseModel):
@@ -25,4 +25,9 @@ class UserUpdate(BaseModel):
     last_name: str | None = None
     avatar: HttpUrl | None = None
 
-
+class PageUsers(BaseModel):
+    items: List[User]
+    total: int
+    page: int
+    size: int
+    pages: int

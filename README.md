@@ -7,6 +7,7 @@
 - Python
 - Pytest
 - Allure
+- Docker
 
 ## Предварительные требования
 Для запуска автотестов необходимо установить:
@@ -30,9 +31,13 @@ python -m venv venv
 4. Установите зависимости:
 ```bash
 pip install -r requirements.txt
-pip install 'uvicorn[standard]'
-pip install 'pydantic[email]'
 ```
+
+4.1 Заруск БД (Docker должен быть запущен)
+```bash
+docker compose up -d
+```
+
 5. Запуск автотестов
 
    5.1. Запустить микросервис:
@@ -49,6 +54,5 @@ pip install 'pydantic[email]'
    allure serve
    ```
   
-## Документация 
-- https://reqres.in/api-docs/
+
 

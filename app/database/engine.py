@@ -1,6 +1,6 @@
 import os
 
-from sqlalchemy.orm import Session
+from sqlmodel import Session
 from sqlmodel import create_engine, SQLModel, text
 
 
@@ -15,6 +15,10 @@ def _int_env(name: str, default: int) -> int:
 
 engine = create_engine(os.getenv("DATABASE_ENGINE"), pool_size=_int_env(os.getenv("DATABASE_ENGINE"), 10))
 
+
+def get_session():
+    with Session(engine) as session:
+        yield session
 
 def create_db_and_tables():
     SQLModel.metadata.create_all(engine)

@@ -1,4 +1,4 @@
-from app.api import check_status, get_user, get_users
+from api_requests.api import check_status, get_user, get_users
 from http import HTTPStatus
 
 
