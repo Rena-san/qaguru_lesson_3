@@ -1,6 +1,15 @@
 ## Lesson 4
 
 docker build . -t qa_app
+
+docker run -e DATABASE_ENGINE="postgresql+psycopg2://postgres:example@localhost:5432/postgres" --p 8002:80 qa_app
+
+docker run -e DATABASE_ENGINE="postgresql+psycopg2://postgres:example@host.docker.internal:5432/postgres" --p 8002:80 qa_app
+
+docker compose up
+
+docker compose --build (пересобирает образ)
+
 ## Описание
 
 Пробные тесты для тестирования api reqres.in и кастомного микросервиса

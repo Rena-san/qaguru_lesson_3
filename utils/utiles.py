@@ -5,6 +5,7 @@ import string
 class Api:
     HOST = "https://reqres.in"
     LOCAL_HOST = "http://localhost:8000"
+    DOCKER_LOCAL_HOST = "http://localhost:8002"
 
 
 def generate_email(prefix="qatest_") -> str:
